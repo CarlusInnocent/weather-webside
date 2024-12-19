@@ -5,7 +5,7 @@ import { geocode } from './utils/geocode.js';
 import { weatherData } from './utils/weatherData.js';
 
 const app = express()
-const PORT = 3000
+const PORT = process.env.PORT || 3000
 const __dirname = import.meta.dirname;
  
 // define paths for express config
