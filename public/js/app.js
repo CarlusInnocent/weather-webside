@@ -22,12 +22,13 @@ weatherForm.addEventListener('submit', (e) => {
                 throw new Error(data.error);
             }
             
-            const { weather_data: { feelslike, temperature, weather_descriptions } } = data
+            const { weather_data: { feelslike, temperature, weather_descriptions, humidity } } = data
 
             success.innerHTML = `
                 Feels-Like: ${feelslike}°C <br>
                 Temperature: ${temperature}°C <br>
-                Description: ${weather_descriptions}
+                Description: ${weather_descriptions} <br>
+                Humidity: ${humidity}%
             `
             failure.textContent = ''
         } catch (error) {

@@ -5,9 +5,9 @@ export const weatherData = async (latitude, longitude) => {
 
     try {
         const response = await axios.get(weather_url, { timeout: 10000 })
-        const { data: { current: { temperature, feelslike, weather_descriptions } } } = response
+        const { data: { current: { temperature, feelslike, weather_descriptions, humidity } } } = response
 
-        return ({weather_descriptions:weather_descriptions[0],temperature,feelslike})
+        return ({weather_descriptions:weather_descriptions[0],temperature,feelslike,humidity})
     } catch (error) {
         if (error.code === 'ETIMEDOUT') {
             throw new Error('Request timed out. Please check your connection or try again later.')
